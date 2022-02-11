@@ -1,0 +1,39 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "rest2"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    uri: "todos"
+    http_method: "get"
+    api_response_logical_endpoint: "lo_lfs"
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: false
+      clean_column_name: false
+      trim_white_space: "none"
+    retry_interval: 5
+    timeout: 300
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "lo_lfs"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "/csv/test"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: true
+      trim_white_space: "none"

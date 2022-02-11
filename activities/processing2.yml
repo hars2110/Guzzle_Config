@@ -1,0 +1,21 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "users"
+    table_dependency:
+    - "users"
+  incremental: false
+target:
+  endpoint: "jdbc_actual"
+  operation: "append"
+  soft_delete: false
+  properties:
+    table: "users"
+    template: "default"
+  primary_key_columns:
+  - "id"
+  merge_columns:
+  - "user_type"

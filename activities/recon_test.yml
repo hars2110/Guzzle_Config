@@ -1,0 +1,5 @@
+version: 1
+job:
+  type: "recon"
+recon:
+  recon_metrics: {}

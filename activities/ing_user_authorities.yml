@@ -1,0 +1,29 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "jdbc_actual"
+  properties:
+    table: "user_authorities"
+    include_columns:
+    - "user_id"
+    format_properties:
+      clean_column_name: false
+  incremental_load:
+    watermarking_key_columns:
+    - "user_id"
+    - "authority_name"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+  columns:
+  - name: "user_id"
+    data_type:
+      value: "int"
+    nullable:
+      value: true
+target:
+  endpoint: "jdbc_actual"
+  properties:
+    table: "users"

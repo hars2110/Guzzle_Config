@@ -1,0 +1,14 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "delta_1"
+  properties:
+    table: "abcd"
+target:
+  endpoint: "delta_1"
+  operation: "append"
+  soft_delete: false
+  properties:
+    table: "test"
+  incremental: true

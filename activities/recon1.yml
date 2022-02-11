@@ -1,0 +1,34 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    sql: "select * from users"
+    table_dependency:
+    - "name"
+target:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "test_src"
+    filter: "id = 1"
+recon:
+  primary_keys:
+  - "id"
+  recon_metrics:
+    demo1:
+      source_aggregation: "test"
+      target_aggregation: "test(1)"
+    demo2:
+      detail_check_enabled: true
+      source_aggregation: "test(2 + 2)"
+      target_aggregation: "test(2 + 2)"
+    demo3:
+      source_aggregation: "test(2)"
+      target_aggregation: "test(2)"
+    demo4:
+      source_aggregation: "mul(0)"
+      target_aggregation: "mul"
+    test1:
+      source_aggregation: "sum"
+      target_aggregation: "sum"

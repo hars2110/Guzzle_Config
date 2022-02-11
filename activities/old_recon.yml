@@ -1,0 +1,25 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "users"
+target:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "users"
+recon:
+  primary_keys:
+  - "id"
+  - "name"
+  recon_metrics:
+    demo:
+      source_aggregation: "count(id)"
+      target_aggregation: "count(age)"
+    test:
+      detail_check_enabled: true
+      source_aggregation: "sum(1)"
+      target_aggregation: "sum(2)"
+    test12:
+      source_aggregation: "ss"

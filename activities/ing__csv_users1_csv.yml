@@ -1,0 +1,45 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "lo_lfs"
+  properties:
+    source_file_pattern: "/csv/users1.csv"
+    format: "xml"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      clean_column_name: false
+      root_tag: "USERS"
+      row_tag: "AAAA"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "lo_lfs"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "_csv_users1_csv"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+      trim_white_space: "none"
+reject:
+  endpoint: "lo_lfs"
+  properties:
+    format: "delimited"
+    path: "_csv_users1_csv"
+    charset: "UTF-8"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false

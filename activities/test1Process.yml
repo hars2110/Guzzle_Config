@@ -1,0 +1,6 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "jdbc_pract"
+  incremental: false

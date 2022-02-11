@@ -1,0 +1,25 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "jdbc_test"
+  properties:
+    include_columns:
+    - "abcd"
+    format_properties:
+      clean_column_name: false
+    table_dependency:
+    - "student"
+  incremental_load:
+    watermarking_key_columns:
+    - "col2"
+    - "col3"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "delta_1"
+  properties:
+    auto_create_table: true
+  operation: "append"

@@ -1,0 +1,19 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    table_dependency:
+    - "users1"
+    - "users2"
+    - "users8"
+    - "users11"
+  incremental: false
+target:
+  endpoint: "jdbc_pract"
+  operation: "append"
+  soft_delete: false
+  properties:
+    table: "users21"
+    template: "default"

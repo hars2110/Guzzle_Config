@@ -1,0 +1,17 @@
+version: 1
+job:
+  type: "constraint_checks"
+source:
+  endpoint: "jdbc_pract"
+  primary_keys:
+  - "id"
+  properties:
+    table: "users"
+validation_rules:
+  test:
+    sql: "age >40"
+    constraint_data: "email"
+    detail_check_enabled: true
+  test2:
+    sql: "gender = 'male'"
+    constraint_data: "first_name"

@@ -1,0 +1,26 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    sql: "select * from users"
+target:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "users"
+recon:
+  primary_keys:
+  - "id"
+  recon_metrics:
+    test2:
+      source_aggregation: "count(id)"
+      target_aggregation: "count(gender)"
+    test3:
+      detail_check_enabled: true
+      source_aggregation: "count(gender)"
+      target_aggregation: "count(gender)"
+    test4:
+      detail_check_enabled: true
+      source_aggregation: "sum(id)"
+      target_aggregation: "count(gender)"

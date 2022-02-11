@@ -1,0 +1,20 @@
+version: 1
+job:
+  type: "constraint_checks"
+source:
+  endpoint: "jdbc_test"
+  primary_keys:
+  - "pk1"
+  - "pk_d2"
+  - "abcd"
+  grouping_columns:
+  - "col1"
+  - "col2"
+  properties:
+    table: "aaa"
+    filter: "abc"
+    table_dependency:
+    - "test"
+    - "test_dq2_1"
+    - "test"
+    - "test2"

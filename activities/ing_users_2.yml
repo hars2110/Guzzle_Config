@@ -1,0 +1,24 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "jdbc_actual"
+  properties:
+    table: "users"
+    include_columns:
+    - "id"
+    format_properties:
+      clean_column_name: false
+    table_dependency:
+    - "abcd"
+  incremental_load:
+    watermarking_key_columns:
+    - ""
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "jdbc_actual"
+  properties:
+    table: "users"

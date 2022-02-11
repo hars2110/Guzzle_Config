@@ -1,0 +1,7 @@
+version: 1
+job:
+  type: "external"
+config:
+  endpoint: "test_databricks"
+lineages:
+  source: []

@@ -1,0 +1,27 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "jdbc_pract"
+  properties:
+    table: "users"
+    table_dependency:
+    - "test"
+    - "hive1"
+  additional_columns:
+  - name: "last_name"
+  - name: "id"
+  - name: "created_time"
+  incremental: false
+target:
+  endpoint: "jdbc_pract"
+  operation: "update_only"
+  properties:
+    table: "users"
+    template: "default"
+  primary_key_columns:
+  - "first_name"
+  - "id"
+  - "username"
+  merge_columns:
+  - "id"

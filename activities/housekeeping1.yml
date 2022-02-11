@@ -1,0 +1,18 @@
+version: 1
+job:
+  type: "housekeeping"
+housekeeping:
+  properties:
+    table_dependency:
+    - "test1"
+    - "test3"
+    - "test0"
+  operation: "delete"
+  reference_point:
+    reference_type: "current_time"
+  retention_strategies:
+  - partitions: []
+    day_of_week: 1
+    strict_retention_period_end: false
+    strict_retention_grain:
+    - "test1"

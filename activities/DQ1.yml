@@ -1,0 +1,12 @@
+version: 1
+job:
+  type: "constraint_checks"
+source:
+  endpoint: "jdbc_pract"
+  primary_keys:
+  - "id"
+  properties:
+    table: "users"
+validation_rules:
+  rule 1:
+    sql: "select * from users where id > 900"

@@ -1,0 +1,30 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "test_hive"
+  properties:
+    table: "test"
+  incremental: false
+target:
+  endpoint: "delta_1"
+  operation: "merge"
+  soft_delete: false
+  properties:
+    table: "abcd"
+  primary_key_columns:
+  - "id"
+  additional_columns:
+  - framework_column: "w_created_ts"
+    framework_generated: true
+    name: "created_time"
+  - framework_column: "w_refresh_ts"
+    framework_generated: true
+    name: "refresh_time"
+  - framework_column: "w_current_record_flag"
+    framework_generated: true
+    name: "record_flag"
+  - framework_column: "w_sequence_key"
+    framework_generated: true
+    name: "sequence_id"
+  incremental: false
