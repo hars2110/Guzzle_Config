@@ -14,6 +14,8 @@ source:
       contains_header: true
       infer_schema: false
       clean_column_name: false
+      columns:
+      - c1: "1"
       trim_white_space: "none"
 schema:
   schema_derivation_strategy: "source"
