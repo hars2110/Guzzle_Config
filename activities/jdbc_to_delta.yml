@@ -2,18 +2,19 @@ version: 1
 job:
   type: "ingestion"
 source:
-  endpoint: "jdbc_test_2"
+  endpoint: "lfs_1"
   properties:
-    include_columns:
-    - "abcd222"
+    format: "delimited"
+    charset: "UTF-8"
+    partial_load: false
     format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: false
       clean_column_name: false
-    table_dependency:
-    - "abcd"
-    - "st1"
-  incremental_load:
-    watermarking_key_columns:
-    - "col1"
+      trim_white_space: "none"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
