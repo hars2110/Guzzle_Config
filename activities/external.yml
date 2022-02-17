@@ -2,6 +2,6 @@ version: 1
 job:
   type: "external"
 config:
-  endpoint: "test_databricks"
+  endpoint: "adf"
 lineages:
   source: []
