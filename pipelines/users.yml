@@ -7,7 +7,9 @@ jobs:
 - user_0_4_sql:
     job_parameters:
       p1: "v1"
-- "user_0_1_sql"
+- user_0_1_sql:
+    job_parameters:
+      p1: "v1"
 - "user_1_4_sql"
 - "user_0_2_sql"
 - "user_0_3_sql"
