@@ -4,6 +4,7 @@ job:
 source:
   endpoint: "lfs_1"
   properties:
+    source_file_pattern: "users1.csv"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
@@ -14,8 +15,6 @@ source:
       contains_header: true
       infer_schema: false
       clean_column_name: false
-      columns:
-      - c1: "1"
       trim_white_space: "none"
 schema:
   schema_derivation_strategy: "source"
@@ -26,6 +25,7 @@ target:
   properties:
     format: "delimited"
     charset: "UTF-8"
+    path: "/"
     preserve_hierarchy: false
     format_properties:
       column_delimiter: ","
@@ -34,3 +34,4 @@ target:
       contains_header: true
       merge_file: false
       trim_white_space: "none"
+    file_name: "data"
