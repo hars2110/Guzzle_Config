@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "lo_lfs"
   properties:
-    source_file_pattern: "/xml/users1.xml"
+    source_file_pattern: "/xml/users1.xmll"
     format: "xml"
     charset: "UTF-8"
     partial_load: false
