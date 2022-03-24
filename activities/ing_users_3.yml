@@ -5,9 +5,8 @@ source:
   endpoint: "jdbc_actual"
   properties:
     table: "users"
-    partition_column: "id"
-    include_columns:
-    - "id"
+    exclude_columns:
+    - "username"
     format_properties:
       clean_column_name: false
 schema:
