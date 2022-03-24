@@ -1,31 +1,32 @@
-version: 1
 job:
   type: "ingestion"
+schema:
+  columns: []
+  discard: true
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
 source:
   endpoint: "jdbc_actual"
   properties:
-    table: "users"
     exclude_columns:
     - "username"
+    filter: "id == 1"
     format_properties:
       clean_column_name: false
-schema:
-  schema_derivation_strategy: "source"
-  strict_schema_check: true
-  discard: true
-  columns: []
+    table: "users"
 target:
   endpoint: "lo_lfs"
   properties:
-    format: "delimited"
     charset: "UTF-8"
-    path: "/csv/excludetgt/"
-    preserve_hierarchy: false
+    file_name: "excluded"
+    format: "delimited"
     format_properties:
       column_delimiter: ","
-      quote_delimiter: "\""
-      escape_char: "\\\\"
       contains_header: true
+      escape_char: "\\\\"
       merge_file: true
+      quote_delimiter: "\""
       trim_white_space: "none"
-    file_name: "excluded"
+    path: "/csv/excludetgt/"
+    preserve_hierarchy: false
+version: 1
