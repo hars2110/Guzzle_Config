@@ -16,17 +16,10 @@ schema:
   discard: true
   columns: []
 target:
-  endpoint: "lo_lfs"
+  endpoint: "asa"
   properties:
-    format: "delimited"
-    charset: "UTF-8"
-    path: "/csv/excludetgt/"
-    preserve_hierarchy: false
+    table: "aa"
     format_properties:
-      column_delimiter: ","
-      quote_delimiter: "\""
-      escape_char: "\\\\"
-      contains_header: true
-      merge_file: true
-      trim_white_space: "none"
-    file_name: "excluded"
+      write_semantics: "polybase"
+      max_str_length: 4000
+  operation: "append"
