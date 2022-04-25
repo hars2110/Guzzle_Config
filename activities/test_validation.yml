@@ -45,7 +45,7 @@ schema:
     transform_sql:
       value: "concat(first_name, '${additional_name}')"
     data_type:
-      value: "varchar(10)"
+      value: "varchar(20)"
       validate: true
     nullable:
       value: true
