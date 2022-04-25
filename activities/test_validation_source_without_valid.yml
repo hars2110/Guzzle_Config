@@ -71,12 +71,12 @@ target:
       contains_header: true
       merge_file: true
       trim_white_space: "none"
-    file_name: "validated_data"
+    file_name: "validated_data_source_without_valid"
 reject:
   endpoint: "lo_lfs_2"
   properties:
     format: "delimited"
-    path: "reject/rejected_data"
+    path: "reject/rejected_data_source_without_valid"
     charset: "UTF-8"
     preserve_hierarchy: false
     format_properties:
