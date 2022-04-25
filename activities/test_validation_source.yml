@@ -21,7 +21,7 @@ schema:
   strict_schema_check: true
   discard: true
   columns:
-  - name: "id"
+  - name: "first_name"
     nullable:
       value: true
   - name: "gender"
