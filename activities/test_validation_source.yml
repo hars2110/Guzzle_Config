@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "lo_lfs_2"
   properties:
-    source_file_pattern: "validation_datatype*.csv"
+    source_file_pattern: "{validation_datatype1.csv,validation_datatype2.csv}"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
