@@ -17,7 +17,7 @@ source:
       clean_column_name: false
       trim_white_space: "none"
 schema:
-  schema_derivation_strategy: "source"
+  schema_derivation_strategy: "source_without_validate_datatype"
   strict_schema_check: true
   discard: true
   columns:
@@ -38,12 +38,12 @@ target:
       contains_header: true
       merge_file: true
       trim_white_space: "none"
-    file_name: "target_source_wv"
+    file_name: "target_source_wov"
 reject:
   endpoint: "lo_lfs_2"
   properties:
     format: "delimited"
-    path: "/test_source_wv/reject"
+    path: "/test_source_wov/reject"
     charset: "UTF-8"
     preserve_hierarchy: false
     format_properties:
