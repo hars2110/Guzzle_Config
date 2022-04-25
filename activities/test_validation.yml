@@ -43,7 +43,7 @@ schema:
       value: true
   - name: "full_name"
     transform_sql:
-      value: "concat(first_name, '${additional_name)')"
+      value: "concat(first_name, '${additional_name}')"
     data_type:
       value: "varchar(10)"
       validate: true
