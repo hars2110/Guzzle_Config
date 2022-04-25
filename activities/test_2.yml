@@ -32,7 +32,7 @@ target:
   properties:
     format: "delimited"
     charset: "UTF-8"
-    path: "/test_source_wv"
+    path: "/test_source_wov"
     preserve_hierarchy: false
     format_properties:
       column_delimiter: ","
