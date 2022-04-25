@@ -20,4 +20,28 @@ schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
+  columns:
+  - name: "id"
+    nullable:
+      value: true
+  - name: "gender"
+    data_type:
+      value: "varchar(1)"
+      validate: true
+    nullable:
+      value: true
+  - name: "birthdate"
+    data_type:
+      value: "date"
+      validate: false
+    nullable:
+      value: true
+  - name: "instance_id"
+    transform_sql:
+      value: "'0001'"
+    nullable:
+      value: true
+  - name: "full_name"
+    nullable:
+      value: true
 folder: "/issue_40"
