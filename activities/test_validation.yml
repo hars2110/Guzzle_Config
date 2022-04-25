@@ -49,11 +49,11 @@ schema:
       validate: true
     nullable:
       value: true
-  - name: "created_time"
+  - name: "system"
     transform_sql:
-      value: "${business_date}"
+      value: "${system}"
     data_type:
-      value: "timestamp"
+      value: "string"
       validate: false
     nullable:
       value: true
