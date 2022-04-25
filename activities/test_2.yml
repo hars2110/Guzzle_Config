@@ -22,6 +22,9 @@ schema:
   discard: true
   columns:
   - name: "id"
+    data_type:
+      value: "int"
+      validate: false
     nullable:
       value: true
 target:
