@@ -51,7 +51,7 @@ schema:
       value: true
   - name: "system"
     transform_sql:
-      value: "${system}"
+      value: "'${system}'"
     data_type:
       value: "string"
       validate: false
