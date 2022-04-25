@@ -17,7 +17,7 @@ source:
       clean_column_name: false
       trim_white_space: "none"
 schema:
-  schema_derivation_strategy: "source"
+  schema_derivation_strategy: "source_without_validate_datatype"
   strict_schema_check: true
   discard: true
   columns:
