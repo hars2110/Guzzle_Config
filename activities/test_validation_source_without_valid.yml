@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "lo_lfs_2"
   properties:
-    source_file_pattern: "validation_datatype.csv"
+    source_file_pattern: "validation_datatype*.csv"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
@@ -21,7 +21,7 @@ schema:
   strict_schema_check: true
   discard: true
   columns:
-  - name: "id"
+  - name: "first_name"
     nullable:
       value: true
   - name: "gender"
@@ -43,7 +43,7 @@ schema:
       value: true
   - name: "full_name"
     transform_sql:
-      value: "concat(first_name, '${additional_name}')"
+      value: "concat(first_name, ' ${additional_name}')"
     data_type:
       value: "varchar(20)"
       validate: true
@@ -62,7 +62,7 @@ target:
   properties:
     format: "delimited"
     charset: "UTF-8"
-    path: "/target"
+    path: "/target_multiple"
     preserve_hierarchy: false
     format_properties:
       column_delimiter: ","
@@ -76,7 +76,7 @@ reject:
   endpoint: "lo_lfs_2"
   properties:
     format: "delimited"
-    path: "reject/rejected_data_source_without_valid"
+    path: "reject_multiple/rejected_data_source_without_valid"
     charset: "UTF-8"
     preserve_hierarchy: false
     format_properties:
