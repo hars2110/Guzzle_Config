@@ -14,5 +14,5 @@ schema:
 target:
   endpoint: "jdbc_pract"
   properties:
-    table: "test2"
+    table: "test3"
 folder: "/graph_869"
