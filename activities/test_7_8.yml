@@ -4,13 +4,13 @@ job:
 source:
   endpoint: "jdbc_pract"
   properties:
-    table: "test4"
+    table: "test7"
     format_properties:
       clean_column_name: false
     table_dependency:
-    - "test4"
     - "test5"
-    - "test6"
+    - "test1"
+    - "test7"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
@@ -18,5 +18,5 @@ schema:
 target:
   endpoint: "jdbc_pract"
   properties:
-    table: "test7"
+    table: "test8"
 folder: "/graph_869"
