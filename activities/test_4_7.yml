@@ -9,6 +9,8 @@ source:
       clean_column_name: false
     table_dependency:
     - "test4"
+    - "test5"
+    - "test6"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
