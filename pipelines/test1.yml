@@ -12,4 +12,3 @@ jobs:
 - "test_3_6"
 - "test_4_7"
 - "test_7_8"
-folder: "/"
