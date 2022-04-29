@@ -4,11 +4,11 @@ parallel: 2
 properties:
   auto_dependency: true
 jobs:
+- "test_4_7"
+- "test_7_8"
 - "test_0_1"
 - "test_0_2"
 - "test_0_3"
 - "test_0_4"
 - "test_2_5"
 - "test_3_6"
-- "test_4_7"
-- "test_7_8"
