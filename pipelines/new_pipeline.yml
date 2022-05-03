@@ -1,5 +1,7 @@
 version: 1
 description: ""
 parallel: 1
-properties: {}
-jobs: []
+properties:
+  auto_dependency: false
+jobs:
+- "adls_tocsv"
