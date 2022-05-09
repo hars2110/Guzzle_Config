@@ -5,8 +5,8 @@ properties:
   auto_dependency: false
 jobs:
 - "adls_tocsv"
-- "adls_tocsv"
 - "abcd"
+- "adls_tocsv"
 - "adls_tocsv"
 - "csv_jdbc"
 - "csv_to_csv"
