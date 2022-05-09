@@ -1,5 +1,22 @@
 version: 1
 description: ""
 parallel: 1
-properties: {}
-jobs: []
+properties:
+  auto_dependency: false
+jobs:
+- "new_ing"
+- "processing"
+- "processing_sql_user"
+- "recon2"
+- "ing_users_1"
+- ing_users:
+    job_parameters:
+      src: "us1"
+      tgt: "us2"
+- "xml_to_csv"
+- "ing_users"
+- "old_recon"
+- abcd:
+    job_parameters:
+      src: "abcd"
+      tgt: "ab"
