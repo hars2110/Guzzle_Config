@@ -10,3 +10,4 @@ jobs:
 - "adls_tocsv"
 - "csv_jdbc"
 - "csv_to_csv"
+- "adls_tocsv"
