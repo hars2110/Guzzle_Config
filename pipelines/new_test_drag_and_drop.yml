@@ -9,16 +9,16 @@ jobs:
     job_parameters:
       src: "abcd"
       tgt: "ab"
-- "processing"
+- "ing_users_1"
 - "ing_users"
 - old_recon:
     job_parameters:
       old_: "11"
+- "ing_users_3"
 - "xml_to_csv"
 - ing_users:
     job_parameters:
       src: "us1"
       tgt: "us2"
 - "processing_sql_user"
-- "recon2"
-- "ing_users_1"
+- "processing"
