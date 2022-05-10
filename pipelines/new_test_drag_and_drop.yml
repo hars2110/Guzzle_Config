@@ -4,12 +4,13 @@ parallel: 1
 properties:
   auto_dependency: false
 jobs:
+- "ing_users_1"
 - "new_ing"
 - abcd:
     job_parameters:
       src: "abcd"
       tgt: "ab"
-- "ing_users_1"
+- "processing"
 - "ing_users"
 - old_recon:
     job_parameters:
@@ -21,4 +22,3 @@ jobs:
       src: "us1"
       tgt: "us2"
 - "processing_sql_user"
-- "processing"
