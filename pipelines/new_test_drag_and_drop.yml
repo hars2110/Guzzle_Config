@@ -4,21 +4,23 @@ parallel: 1
 properties:
   auto_dependency: false
 jobs:
-- "ing_users_1"
+- "adls_tocsv"
 - "new_ing"
 - abcd:
     job_parameters:
       src: "abcd"
       tgt: "ab"
+- "processing_sql_user"
 - "processing"
 - "ing_users"
-- old_recon:
-    job_parameters:
-      old_: "11"
 - "ing_users_3"
 - "xml_to_csv"
 - ing_users:
     job_parameters:
       src: "us1"
       tgt: "us2"
-- "processing_sql_user"
+- old_recon:
+    job_parameters:
+      old_: "11"
+- "ing_users_1"
+- "abcd"
