@@ -5,20 +5,20 @@ properties:
   auto_dependency: false
 jobs:
 - "new_ing"
-- "ing_users"
 - abcd:
     job_parameters:
       src: "abcd"
       tgt: "ab"
 - "processing"
+- "ing_users"
 - old_recon:
     job_parameters:
       old_: "11"
-- "processing_sql_user"
-- "recon2"
-- "ing_users_1"
+- "xml_to_csv"
 - ing_users:
     job_parameters:
       src: "us1"
       tgt: "us2"
-- "xml_to_csv"
+- "processing_sql_user"
+- "recon2"
+- "ing_users_1"
