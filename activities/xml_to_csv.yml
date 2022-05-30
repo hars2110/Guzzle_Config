@@ -4,18 +4,18 @@ job:
 source:
   endpoint: "lo_lfs"
   properties:
-    source_file_pattern: "excel/users.xls"
-    format: "excel"
+    source_file_pattern: "csv/users1.csv"
+    format: "delimited"
     charset: "UTF-8"
     partial_load: false
     format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
       contains_header: true
       infer_schema: false
-      clean_column_name: true
-      columns:
-      - first_name: ""
-      data_address: "A1"
-      empty_as_null: true
+      clean_column_name: false
+      trim_white_space: "none"
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
@@ -25,12 +25,13 @@ target:
   properties:
     format: "delimited"
     charset: "UTF-8"
-    path: "csv/users1.csv"
+    path: "csv/"
     preserve_hierarchy: false
     format_properties:
       column_delimiter: ","
       quote_delimiter: "\""
       escape_char: "\\\\"
       contains_header: true
-      merge_file: false
+      merge_file: true
       trim_white_space: "none"
+    file_name: "data"
