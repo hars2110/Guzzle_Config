@@ -4,6 +4,7 @@ job:
 source:
   endpoint: "test_lfs"
   properties:
+    source_file_pattern: "/"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
