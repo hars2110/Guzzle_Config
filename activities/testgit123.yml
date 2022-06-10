@@ -5,6 +5,7 @@ source:
   endpoint: "jdbc_pract"
   primary_keys:
   - "inst-id"
+  - "id"
   properties:
     table: "users123"
 validation_rules:
