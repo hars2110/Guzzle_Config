@@ -4,11 +4,12 @@ job:
 source:
   endpoint: "lo_lfs"
   properties:
-    source_file_pattern: "/xml/users1.xmll"
+    source_file_pattern: "/xml/users1.xml"
     format: "xml"
     charset: "UTF-8"
     partial_load: false
     format_properties:
+      infer_schema: false
       clean_column_name: false
       root_tag: "ROWS"
       row_tag: "ROW"
