@@ -25,7 +25,7 @@ target:
   properties:
     format: "delimited"
     charset: "UTF-8"
-    path: "/csv/"
+    path: "/csv"
     preserve_hierarchy: false
     format_properties:
       column_delimiter: ","
@@ -34,3 +34,4 @@ target:
       contains_header: true
       merge_file: false
       trim_white_space: "none"
+    file_name: "new_app_data"
