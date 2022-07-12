@@ -4,7 +4,7 @@ job:
 source:
   endpoint: "test_lfs"
   properties:
-    source_file_pattern: "/guzzle"
+    source_file_pattern: "/guzzle/test-data"
     format: "delimited"
     charset: "UTF-8"
     partial_load: false
