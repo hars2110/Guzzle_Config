@@ -1,6 +1,17 @@
 version: 1
 job:
   type: "ingestion"
+source:
+  endpoint: "lfs_1"
+  properties:
+    format: "json"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      clean_column_name: false
+      multiline: false
+      primitives_as_string: false
+      sampling_ratio: 100
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
